@@ -1,0 +1,42 @@
+// src/app/components/homepage/BigCTASection.tsx
+import React from "react";
+
+export default function BigCTASection() {
+  return (
+    <section
+      className="mx-auto max-w-6xl h-[500px] md:h-[400px] bg-cover bg-center bg-no-repeat relative flex items-center justify-center"
+      style={{
+        backgroundImage: "url('/images/cta-banner.jpg')",
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Content */}
+      <div className="relative z-10 text-center px-6 max-w-3xl">
+        {/* Category Label */}
+        <span className="text-white/80 rounded-sm py-1 px-3 bg-white/25 backdrop-blur-md shadow-sm uppercase tracking-wider text-xs font-medium">
+          Travel
+        </span>
+
+        {/* Main Title */}
+        <h2 className="text-white text-3xl md:text-[30px] font-bold leading-tight mt-3">
+          Richird Norton photorealistic rendering as real photos
+        </h2>
+
+        {/* Description Paragraph */}
+        <p className="text-white/90 mt-4 text-base md:text-[19] max-w-lg mx-auto">
+          Progressively incentivize cooperative systems through technically
+          sound functionalities. The credibly productivate seamless data.
+        </p>
+
+        {/* Primary Button */}
+        <button className="mt-6 bg-white text-gray-900 font-medium px-6 py-3 rounded-lg hover:text-white hover:bg-black transition">
+          Start planning your trip
+        </button>
+      </div>
+
+
+    </section>
+  );
+}

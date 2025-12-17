@@ -33,7 +33,7 @@ module.exports = {
       },
     },
   },
-  plugins: [
+ /* plugins: [
     require('@tailwindcss/typography'), // for blog post content styling
-  ],
+  ], */
 };
