@@ -18,16 +18,16 @@ export default function Header() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-20">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-2 sm:px-6 py-2 sm:py-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-2 sm:py-6">
         {/* Logo */}
-        <div className="text-overlay-text text-base sm:text-lg leading-tight text-white ">
+        <div className="text-overlay-text text-base sm:text-lg leading-tight text-white mx-6">
           <span className="italic block">Yourtravelblog</span>
-          <span className="ml-8 font-semibold">by Opitien</span>
+          <span className="ml-4 font-bold">by Opitien</span>
         </div>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-12">
-          <nav className="flex items-center gap-2 text-lg sm:text-sm tracking-[0.18em] text-overlay-text text-white ">
+        <div className="hidden md:flex items-center gap-6">
+          <nav className="flex items-center gap-3 text-lg sm:text-sm tracking-[0.18em] text-overlay-text text-white ">
             {navItems.map((item) => (
               <button
                 key={item}
@@ -41,13 +41,13 @@ export default function Header() {
           {/* Search */}
           <button
             aria-label="Search"
-            className="flex h-10 w-10 items-center justify-center bg-[rgba(0,0,0,0.7)]"
+            className="flex h-10 w-10 items-center rounded-sm justify-center bg-[rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.7)]/10"
           >
             <Search className="h-4 w-4 text-white  text-overlay-text" />
           </button>
 
           {/* CTA */}
-          <button className="inline-flex h-10 items-center bg-black px-5 text-[10px] sm:text-xs font-semibold tracking-[0.14em] text-white uppercase text-center">
+          <button className="inline-flex h-10 items-center rounded-sm bg-black hover:bg-black/60 px-5 text-[10px] sm:text-xs font-semibold tracking-[0.14em] text-white uppercase text-center">
             GET YOUR 120$ CHRISTMAS GIFT
           </button>
         </div>

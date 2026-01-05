@@ -27,7 +27,7 @@ export default function Hero() {
         </p>
 
         {/* CTA button */}
-        <button className="rounded-md bg-white px-6 sm:px-8 py-3 text-xs sm:text-sm font-semibold text-black shadow hover:bg-white/90 transition">
+        <button className="rounded-md bg-white px-6 sm:px-8 py-3 text-xs sm:text-sm font-semibold text-black shadow hover:bg-white/30 transition cursor-pointer">
           Start planning your trip
         </button>
       </div>

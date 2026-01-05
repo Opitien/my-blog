@@ -2,7 +2,7 @@
 "use client";
 
 import React from "react";
-import { FaGlobe, FaFacebookF, FaTwitter, FaInstagram, FaArrowUp } from "react-icons/fa";
+import {FaFacebookF, FaTwitter, FaInstagram, FaArrowUp, FaYoutube, FaPinterest } from "react-icons/fa";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -10,30 +10,50 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black text-white relative py-6 px-6 md:px-12">
-      <div className="flex justify-between items-center flex-wrap">
-        {/* LEFT FOOTER TEXT */}
-        <p className="text-gray-400 text-sm">Designed & Developed by XP DESIGN</p>
+    <footer className="bg-black text-white relative pt-12 pb-16 px-6 md:px-12">
 
-        {/* RIGHT FOOTER ICONS + COUNTERS */}
-        <div className="flex items-center gap-4 mt-4 lg:mt-0">
-          {/* Social Icons */}
-          <div className="flex gap-4">
-            <FaGlobe className="text-white cursor-pointer hover:text-gray-400" />
-            <FaFacebookF className="text-white cursor-pointer hover:text-gray-400" />
-            <FaTwitter className="text-white cursor-pointer hover:text-gray-400" />
-            <FaInstagram className="text-white cursor-pointer hover:text-gray-400" />
-          </div>
+<div className="flex justify-between items-center flex-wrap">
+  {/* LEFT FOOTER TEXT */}
+  <p className="text-gray-400 text-sm">
+    Designed & Developed by XP DESIGN
+  </p>
 
-          {/* Counters */}
-          <div className="flex gap-4 ml-4">
-            <span className="text-gray-300 text-sm">29k</span>
-            <span className="text-gray-300 text-sm">70k</span>
-            <span className="text-gray-300 text-sm">140k</span>
-            <span className="text-gray-300 text-sm">18k</span>
-          </div>
-        </div>
-      </div>
+  {/* RIGHT FOOTER ICONS + COUNTERS */}
+  <div className="flex items-center gap-6 mt-4 lg:mt-0">
+    
+    {/* Facebook */}
+    <div className="flex flex-col items-center">
+      <FaFacebookF className="text-white cursor-pointer hover:text-gray-400" />
+      <span className="text-gray-300 text-sm mt-1">29</span>
+    </div>
+
+    {/* Twitter */}
+    <div className="flex flex-col items-center">
+      <FaTwitter className="text-white cursor-pointer hover:text-gray-400" />
+      <span className="text-gray-300 text-sm mt-1">70k</span>
+    </div>
+
+    {/* Instagram */}
+    <div className="flex flex-col items-center">
+      <FaInstagram className="text-white cursor-pointer hover:text-gray-400" />
+      <span className="text-gray-300 text-sm mt-1">40</span>
+    </div>
+
+    {/* Pinterest */}
+    <div className="flex flex-col items-center">
+      <FaPinterest className="text-white cursor-pointer hover:text-gray-400" />
+      <span className="text-gray-300 text-sm mt-1">13k</span>
+    </div>
+
+    {/* YouTube */}
+    <div className="flex flex-col items-center">
+      <FaYoutube className="text-white cursor-pointer hover:text-gray-400" />
+      <span className="text-gray-300 text-sm mt-1">168k</span>
+    </div>
+
+  </div>
+</div>
+
 
       {/* SCROLL TO TOP BUTTON */}
       <button title="Scroll to top"
