@@ -12,7 +12,7 @@ import {
 
 export default function BlogSidebar() {
   return (
-    <aside className="space-y-12">
+    <aside className="space-y-12 w-full lg:max-w-[320px]">
       {/* Follow Us */}
       <div>
         <h4 className="text-sm font-bold uppercase tracking-widest mb-6 relative after:content-[''] after:block after:w-8 after:h-0.5 after:bg-gray-300 after:mt-2">
