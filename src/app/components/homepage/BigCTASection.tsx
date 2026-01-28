@@ -1,19 +1,26 @@
 // src/app/components/homepage/BigCTASection.tsx
+import Image from "next/image";
 import React from "react";
 
 export default function BigCTASection() {
   return (
-    <section
-      className="mx-auto max-w-6xl h-[500px] md:h-[400px] bg-cover bg-center bg-no-repeat relative flex items-center justify-center"
-      style={{
-        backgroundImage: "url('/images/cta-banner.jpg')",
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+    <section className="relative mx-auto max-w-6xl h-[500px] md:h-[400px] overflow-hidden flex items-center justify-center">
+      {/* Background image */}
+      <div className="absolute inset-0 transform transition-transform duration-500 hover:scale-105">
+        <Image
+          src="/images/cta-banner.jpg"
+          alt="Travel banner"
+          fill
+          className="object-cover"
+          priority={false} // Lazy load by default
+        />
+      </div>
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-3xl">
+      <div className="relative z-10 text-center px-6 max-w-3xl animate-fadeIn">
         {/* Category Label */}
         <span className="text-white/80 rounded-sm py-1 px-3 bg-white/25 backdrop-blur-md shadow-sm uppercase tracking-wider text-xs font-medium">
           Travel
@@ -25,7 +32,7 @@ export default function BigCTASection() {
         </h2>
 
         {/* Description Paragraph */}
-        <p className="text-white/90 mt-4 text-base md:text-[19] max-w-lg mx-auto">
+        <p className="text-white/90 mt-4 text-base md:text-[19px] max-w-lg mx-auto">
           Progressively incentivize cooperative systems through technically
           sound functionalities. The credibly productivate seamless data.
         </p>
@@ -35,8 +42,6 @@ export default function BigCTASection() {
           Start planning your trip
         </button>
       </div>
-
-
     </section>
   );
 }

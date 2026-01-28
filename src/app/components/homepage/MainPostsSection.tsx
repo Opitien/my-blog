@@ -11,42 +11,51 @@ export default function MainPostsSection() {
           <PostCard
             title="Integer Maecenas Eget Viverra"
             imageSrc="/images/wave-beach.jpg"
+            category="Nature"
           />
           <PostCard
             title="Aenean eleifend ante maecenas"
             imageSrc="/images/mountain-lake.jpg"
+            category="Travel"
           />
           <PostCard
             title="Integer Maecenas Eget Viverra"
             imageSrc="/images/night-rocks.jpg"
+            category="Camping"
           />
 
           {/* Row 2 */}
           <PostCard
             title="Integer Maecenas Eget Viverra"
             imageSrc="/images/yellow-jacket-mountain.jpg"
+            category="Hiking"
           />
           <PostCard
             title="Aenean eleifend ante maecenas"
             imageSrc="/images/city-photographer.jpg"
+            category="Photography"
           />
           <PostCard
             title="Integer Maecenas Eget Viverra"
             imageSrc="/images/city-lady.jpg"
+            category="Lifestyle"
           />
 
           {/* Row 3 */}
           <PostCard
             title="Integer Maecenas Eget Viverra"
             imageSrc="/images/cliff-lake-red-jacket.jpg"
+            category="Adventure"
           />
           <PostCard
             title="Aenean eleifend ante maecenas"
             imageSrc="/images/desert-road.jpg"
+            category="Road Trip"
           />
           <PostCard
             title="Integer Maecenas Eget Viverra"
             imageSrc="/images/airport-passports.jpg"
+            category="Travel Tips"
           />
         </div>
       </div>

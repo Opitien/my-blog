@@ -4,64 +4,39 @@ import Image from "next/image";
 type PostCardProps = {
   title: string;
   imageSrc: string;
+  category?: string;
 };
 
-export default function PostCard({ title, imageSrc }: PostCardProps) {
+export default function PostCard({ title, imageSrc, category = "Travel" }: PostCardProps) {
   return (
-    <article className="flex flex-col bg-surface">
-      {/* Image + tags + menu */}
-      <div className="relative aspect-4/3 w-full overflow-hidden">
+    <article className="group flex flex-col bg-surface">
+      {/* Image wrapper */}
+      <div className="relative aspect-4/3 w-full overflow-hidden bg-gray-200">
+        {/* Skeleton placeholder */}
+        <div className="absolute inset-0 animate-pulse bg-gray-300" />
+
+        {/* Image */}
         <Image
           src={imageSrc}
           alt={title}
           fill
-          className="object-cover"
+          loading="lazy"
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
 
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/40" />
+
         {/* Glassmorphism tags */}
-        <div className="absolute left-4 top-4 flex gap-2">
-          <span
-            className="
-              rounded-sm
-              px-3
-              py-1
-              text-[11px]
-              font-medium
-              text-white
-              bg-white/25
-              backdrop-blur-md
-              shadow-sm
-            "
-          >
-            Aenean Eleifend
-          </span>
-          <span
-            className="
-              rounded-sm
-              px-3
-              py-1
-              text-[11px]
-              font-medium
-              text-white
-              bg-slate-600/35
-              backdrop-blur-md
-              shadow-sm
-            "
-          >
-            Aliquam
+        <div className="absolute left-4 top-4 z-10 flex gap-2">
+          <span className="rounded-sm px-3 py-1 text-[11px] font-medium text-white bg-white/25 backdrop-blur-md shadow-sm uppercase tracking-wide">
+            {category}
           </span>
         </div>
 
-        {/* Circular glass icon badge */},
+        {/* Circular glass icon badge */}
         <button
-          className="
-            absolute right-4 top-4
-            flex h-8 w-8 items-center justify-center
-            rounded-full
-            bg-black/25
-            backdrop-blur-md
-            shadow-sm
-          "
+          className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/25 backdrop-blur-md shadow-sm"
           aria-label="More options"
         >
           <span className="block h-3 w-4 border border-white/80 rounded-[3px] relative">
