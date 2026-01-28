@@ -1,9 +1,10 @@
 "use client";
 
-import { Search, X } from "lucide-react";
+import { Search, X, Plane } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import SearchOverlay from "./SearchOverlay";
 
 const navItems = [
   { label: "DESTINATIONS", href: "/destinations" },
@@ -62,10 +63,10 @@ export default function Header() {
       >
         <div className="mx-auto max-w-7xl relative flex items-center px-4 sm:px-6 py-4">
           {/* Logo - left */}
-          <div className="text-white leading-tight z-20 px-3">
+          <Link href="/" className="text-white leading-tight z-20 px-3 cursor-pointer">
             <span className="italic text-sm">Yourtravelblog</span>
             <span className="font-bold text-sm"> by Opitien</span>
-          </div>
+          </Link>
 
           {/* Nav links - center */}
           <nav className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center gap-6 text-sm tracking-[0.18em] text-white z-10">
@@ -110,16 +111,9 @@ export default function Header() {
               aria-label="Toggle menu"
               aria-expanded={menuOpen ? "true" : "false"}
               aria-controls="mobile-menu"
-              className="md:hidden relative h-8 w-8"
+              className="md:hidden relative h-10 w-10 z-50 flex items-center justify-center text-white transition-transform duration-200 hover:scale-110"
             >
-              <span
-                className={`absolute left-1/2 top-1/2 h-0.5 w-6 bg-white transition-transform duration-300
-                  ${menuOpen ? "rotate-45" : "-translate-y-2"} -translate-x-1/2`}
-              />
-              <span
-                className={`absolute left-1/2 top-1/2 h-0.5 w-6 bg-white transition-transform duration-300
-                  ${menuOpen ? "-rotate-45" : "translate-y-2"} -translate-x-1/2`}
-              />
+              {menuOpen ? <X size={28} /> : <Plane size={28} />}
             </button>
           </div>
         </div>
@@ -149,30 +143,11 @@ export default function Header() {
         </div>
       </div>
 
-      {/* SEARCH MODAL */}
-      {searchOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center"
-          role="dialog"
-          aria-modal="true"
-        >
-          <div className="relative w-full max-w-lg px-6">
-            <input
-              autoFocus
-              type="text"
-              placeholder="Search..."
-              className="w-full rounded-md bg-white px-4 py-3 text-black outline-none"
-            />
-            <button
-              onClick={() => setSearchOpen(false)}
-              aria-label="Close search"
-              className="absolute right-2 top-2 text-white"
-            >
-              <X />
-            </button>
-          </div>
-        </div>
-      )}
+      {/* SEARCH OVERLAY */}
+      <SearchOverlay
+        isOpen={searchOpen}
+        onClose={() => setSearchOpen(false)}
+      />
     </>
   );
 }

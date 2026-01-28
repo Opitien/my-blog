@@ -1,9 +1,8 @@
 "use client";
 
+import Footer from "../layout/Footer";
 import BlogHero from "./BlogHero";
 import BlogMain from "./BlogMain";
-import BlogShareRow from "./BlogShareRow";
-import NewsletterSignup from "./NewsletterSignup";
 import RelatedPosts from "./RelatedPosts";
 import SingleBlogHeader from "./SingleBlogHeader";
 
@@ -14,6 +13,7 @@ export default function BlogSinglePage() {
       <BlogHero />
       <BlogMain />
       <RelatedPosts />
+      <Footer />
     </main>
   );
 }

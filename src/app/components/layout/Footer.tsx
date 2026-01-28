@@ -63,7 +63,7 @@ export default function Footer() {
       <div className="flex flex-wrap items-center justify-between gap-6">
         {/* Left text */}
         <p className="text-gray-400 text-sm">
-          Designed & Developed by XP DESIGN
+          Designed & Developed by <a href="https://opitien.vercel.app">Opitien</a>
         </p>
 
         {/* Social links */}
